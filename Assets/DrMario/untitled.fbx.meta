@@ -158,11 +158,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: walk
-      takeName: walk
+      name: Idle (1)
+      takeName: Idle
       internalID: -3419257869308726280
       firstFrame: 0
-      lastFrame: 43
+      lastFrame: 178
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
