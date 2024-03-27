@@ -1,26 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+[RequireComponent(typeof(Rigidbody))]
+public class NewBehaviourScript  : MonoBehaviour
 {
-    [SerializeField] private float speed = 15f;
+    [SerializeField] private float speed = 5f;
     [SerializeField] private float turnSpeed = 200f;
 
+    private Rigidbody rb;
     private Animator animator;
-    // Start is called before the first frame update
+
     void Start()
     {
-        animator=GetComponent<Animator>();
-        
+        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+        rb.freezeRotation = true; // Freeze rotation to prevent unwanted physics interactions
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        var velocity = Vector3.forward  * Input.GetAxis("Vertical") * speed;
-        transform.Translate(velocity * Time.deltaTime);
-        transform.Rotate(Vector3.up, Input.GetAxis("Horizontal")* Time.deltaTime*turnSpeed);
-        animator.SetFloat("Speed", velocity.magnitude);
+        Move();
+        Rotate();
+    }
+
+    void Move()
+    {
+        float moveInput = Input.GetAxis("Vertical");
+        Vector3 movement = transform.forward * moveInput * speed * Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + movement);
+        animator.SetFloat("Speed", Mathf.Abs(moveInput)); // Use Mathf.Abs to ensure positive speed value
+    }
+
+    void Rotate()
+    {
+        float turnInput = Input.GetAxis("Horizontal");
+        float turn = turnInput * turnSpeed * Time.fixedDeltaTime;
+        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
+        rb.MoveRotation(rb.rotation * turnRotation);
     }
 }

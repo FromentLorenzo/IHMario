@@ -45,59 +45,74 @@ public class DialogueManager : MonoBehaviour
         option2Button.GetComponentInChildren<TMP_Text>().text = "No Option";
     }
     
-    private IEnumerator TurnCameraTowardsNPC(Transform NPC)
-    {
-        Quaternion startRotation = playerCamera.rotation;
-        Quaternion targetRotation = Quaternion.LookRotation(NPC.position - playerCamera.position);
+    private Quaternion initialCameraRotation;
 
-        float elapsedTime = 0f;
-        while(elapsedTime<1f)
-        {
-            playerCamera.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsedTime);
-            elapsedTime += Time.deltaTime * turnSpeed;
-            yield return null;
-        }
-        playerCamera.rotation = targetRotation;
+private IEnumerator TurnCameraTowardsNPC(Transform NPC)
+{
+    // Stocke la rotation initiale de la caméra
+    initialCameraRotation = playerCamera.rotation;
+
+    Quaternion startRotation = playerCamera.rotation;
+    Quaternion targetRotation = Quaternion.LookRotation(NPC.position - playerCamera.position);
+
+    float elapsedTime = 0f;
+    while(elapsedTime < 1f)
+    {
+        playerCamera.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsedTime);
+        elapsedTime += Time.deltaTime * turnSpeed;
+        yield return null;
     }
+    playerCamera.rotation = targetRotation;
+}
+
+private void RestoreCameraRotation()
+{
+    // Restaure la rotation initiale de la caméra
+    playerCamera.rotation = initialCameraRotation;
+}
+
     
     private bool optionSelected = false;
     
     private IEnumerator PrintDialogue()
+{
+    while (currentDialogueIndex < dialogueList.Count)
     {
-        while (currentDialogueIndex < dialogueList.Count)
+        dialogueString line = dialogueList[currentDialogueIndex];
+        line.startDialogueEvent.Invoke();
+        
+        // Désactivez les boutons au début de l'affichage de chaque ligne de dialogue
+        option1Button.gameObject.SetActive(false);
+        option2Button.gameObject.SetActive(false);
+        
+        if (line.isQuestion)
         {
-            dialogueString line= dialogueList[currentDialogueIndex];
-            line.startDialogueEvent.Invoke();
-            
-            option1Button.gameObject.SetActive(true);
-            option2Button.gameObject.SetActive(true);
-            
-            if (line.isQuestion)
-            {
-                yield return StartCoroutine(TypeText(line.text));
-                option1Button.interactable = true;
-                option2Button.interactable = true;
-                
-                option1Button.GetComponentInChildren<TMP_Text>().text = line.answerOption1;
-                option2Button.GetComponentInChildren<TMP_Text>().text = line.answerOption2;
-                
-                option1Button.onClick.AddListener(() => HandleOptionSelected(line.option1IndexJump));
-                option2Button.onClick.AddListener(() => HandleOptionSelected(line.option2IndexJump));
+            yield return StartCoroutine(TypeText(line.text));
 
-                yield return new WaitUntil(() => optionSelected);
-            }
-            else
-            {
-                yield return StartCoroutine(TypeText(line.text));
-            }
-            line.endDialogueEvent.Invoke();
-            optionSelected = false;
+            // Activez les boutons une fois que toute la question a été affichée
+			option1Button.gameObject.SetActive(true);
+        	option2Button.gameObject.SetActive(true);
+            option1Button.GetComponentInChildren<TMP_Text>().text = line.answerOption1;
+            option2Button.GetComponentInChildren<TMP_Text>().text = line.answerOption2;
             
-            option1Button.gameObject.SetActive(false);
-            option2Button.gameObject.SetActive(false);
+            option1Button.onClick.AddListener(() => HandleOptionSelected(line.option1IndexJump));
+            option2Button.onClick.AddListener(() => HandleOptionSelected(line.option2IndexJump));
+            option1Button.interactable = true;
+            option2Button.interactable = true;
+
+            // Attendre jusqu'à ce qu'une option soit sélectionnée
+            yield return new WaitUntil(() => optionSelected);
         }
-        DialogueStop();
+        else
+        {
+            yield return StartCoroutine(TypeText(line.text));
+        }
+        line.endDialogueEvent.Invoke();
+        optionSelected = false;
     }
+    DialogueStop();
+}
+
     
     private void HandleOptionSelected(int indexJump)
     {
@@ -132,5 +147,7 @@ public class DialogueManager : MonoBehaviour
         firstPersonController.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+		RestoreCameraRotation();
     }
+    
 }
