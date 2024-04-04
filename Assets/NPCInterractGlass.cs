@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NPCInterractGlass : MonoBehaviour
 {
     public Transform cameraPosition;
     public ParticleSystem explosion;
+    public Material fiole2Liquid;
     public ParticleSystem smoke3;
     public ParticleSystem smoke1;
+    public GameObject canvasGameObject;
     private Vector3 initialCameraPosition;
     private Quaternion initialCameraRotation;
     private Transform playerCamera;
@@ -16,6 +19,7 @@ public class NPCInterractGlass : MonoBehaviour
     public GameObject cube2;
     public GameObject cube3;
     public GameObject fiole3;
+    private TMP_Text canvasText;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +31,8 @@ public class NPCInterractGlass : MonoBehaviour
         smoke1.Stop();
         smoke3.Stop();
         explosion.Stop();
-        
+        ChangeMaterialColor(fiole2Liquid, HexToColor("#D3D71A"));
+        canvasText = canvasGameObject.GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
@@ -73,7 +78,8 @@ public class NPCInterractGlass : MonoBehaviour
         }
         if (cubeSelected == cube2)
         {
-            //changer couleur material
+            ChangeMaterialColor(fiole2Liquid, HexToColor("#BE3058"));
+            canvasText.text = "Oh tu as finalement réussi ! Je te remercierai jamais assez pour ton aide. Tu es un véritable génie !";
         }
         if (cubeSelected == cube3)
         {
@@ -82,4 +88,25 @@ public class NPCInterractGlass : MonoBehaviour
             smoke3.Play();
         }
     }
+    
+    private Color HexToColor(string hex)
+    {
+        Color color = Color.white;
+        if (ColorUtility.TryParseHtmlString(hex, out color))
+        {
+            return color;
+        }
+        else
+        {
+            Debug.LogWarning("Impossible de convertir la couleur hexadécimale en RVB. Utilisation de la couleur blanche par défaut.");
+            return Color.white;
+        }
+    }
+    
+    private void ChangeMaterialColor(Material material, Color color)
+    {
+        material.color = color;
+    }
+    
+   
 }
