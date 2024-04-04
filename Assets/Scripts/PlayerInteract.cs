@@ -19,6 +19,7 @@ public class PlayerInteract : MonoBehaviour
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray)
             {
+                
                 if (collider.TryGetComponent(out NPCInterract npcinterract))
                 {
                     npcinterract.Interract();
@@ -29,12 +30,18 @@ public class PlayerInteract : MonoBehaviour
                     
                     microscopeInterract.Interract();
                     
-                    StartCoroutine(resetCamera(microscopeInterract));
+                    //StartCoroutine(resetCamera(microscopeInterract));
                     Debug.Log("Microscope");
                     inMicro = true;
-                    
-                    
-                    
+                }
+                
+                if (collider.TryGetComponent(out NPCInterractGlass gameSelectionInterract))
+                {
+                    Debug.Log("game");
+                    gameSelectionInterract.Interract();
+                    //StartCoroutine(resetCamera(gameSelectionInterract));
+                    Debug.Log("game");
+                    inMicro = true;
                 }
             }
         }
