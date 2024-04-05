@@ -9,20 +9,72 @@ public class CarMovement : MonoBehaviour
     public float backwardMoveSpeed;
     public float steerSpeed;
     private Vector2 input;
+    private bool isGrounded = true;
+    private bool deployingParachute = false;
 
-    public void SetInputs(Vector2 input) {  this.input = input; }
+    public float raycastDistance = 1f;
+    public LayerMask groundLayer;
 
-    void FixedUpdate() // Apply physics here
+    public GameObject parachute;
+
+    public void SetInputs(Vector2 input)
     {
-        // Accelerate
-        float moveSpeed = input.y > 0 ? forwardMoveSpeed : backwardMoveSpeed;
-        moveSpeed *= Mathf.Abs(input.y); // This ensures that moveSpeed is zero if input.y is 0
+        this.input = input;
+    }
 
-        // Apply forward or backward force based on the input
+    void Start()
+    {
+        if (parachute != null)
+        {
+            parachute.SetActive(false);
+        }
+    }
+
+    void FixedUpdate() 
+    {
+        float moveSpeed = input.y > 0 ? forwardMoveSpeed : backwardMoveSpeed;
+        moveSpeed *= Mathf.Abs(input.y); 
+
         rg.AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);
 
-        // Steer the car based on the horizontal input
         float rotation = input.x * steerSpeed * Time.fixedDeltaTime;
         transform.Rotate(0, rotation, 0, Space.World);
+
+        if (!isGrounded && !deployingParachute)
+        {
+            StartCoroutine(DeployParachuteAfterDelay());
+        } else if (isGrounded && deployingParachute)
+        {
+            StartCoroutine(UnshowParachuteAfterDelay());
+        }
     }
+
+    private IEnumerator DeployParachuteAfterDelay()
+    {
+        deployingParachute = true;
+        yield return new WaitForSeconds(0.3f);
+        parachute.SetActive(true);
+    }
+
+    private IEnumerator UnshowParachuteAfterDelay()
+    {
+        deployingParachute = false;
+        yield return new WaitForSeconds(0.2f);
+        parachute.SetActive(false);
+    }
+     void Update()
+    {
+        print(isGrounded);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance, groundLayer))
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
+
+    }
+
 }

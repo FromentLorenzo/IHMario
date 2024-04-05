@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CarIdentity : MonoBehaviour
 {
-    public string name;
+    public string carName;
 
-    public CarIdentity(string name)
+    public CarIdentity(string carName)
     {
-        this.name = name;
+        this.carName = carName;
     }
 
     // Start is called before the first frame update

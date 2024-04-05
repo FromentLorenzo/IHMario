@@ -6,14 +6,18 @@ TagManager:
   tags:
   - Wall
   - NPC
+  - parachute
+  - parachute12
+  - parachute1
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - player
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
