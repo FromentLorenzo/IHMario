@@ -6,10 +6,14 @@ TagManager:
   tags:
   - Wall
   - NPC
+<<<<<<< HEAD
   - parachute
   - parachute12
   - parachute1
   - Ground
+=======
+  - Selectable
+>>>>>>> adf4463a6e0b93e85482d404b6fb5e0f7e8b5ad8
   layers:
   - Default
   - TransparentFX
