@@ -4,24 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Wall
-  - NPC
-<<<<<<< HEAD
+  - Ground
+  - parachute1
   - parachute
   - parachute12
-  - parachute1
-  - Ground
-=======
-  - Selectable
->>>>>>> adf4463a6e0b93e85482d404b6fb5e0f7e8b5ad8
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - player
+  - Ground
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 
