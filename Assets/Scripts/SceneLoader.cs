@@ -11,4 +11,12 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu"); // Load scene at index 0
     }
+    public void LoadEndRaceScene()
+    {
+        SceneManager.LoadScene("EndRaceScreen"); // Load scene at index 2
+    }
+    public void LoadLooseRaceScene()
+    {
+        SceneManager.LoadScene("LooseRaceScreen"); // Load scene at index 3
+    }
 }

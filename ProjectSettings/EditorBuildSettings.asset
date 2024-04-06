@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 4768ca4c7104b454e9322067c60b6c28
+  - enabled: 1
+    path: Assets/Scenes/EndRaceScreen.unity
+    guid: cd7eaa8beb88de143aeba5e5e6bf231c
+  - enabled: 1
+    path: Assets/Scenes/LooseRaceScreen 1.unity
+    guid: 14fc8bf1688cbcf49b05ee6ac88e218f
   m_configObjects: {}

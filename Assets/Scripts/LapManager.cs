@@ -49,7 +49,7 @@ public class LapManager : MonoBehaviour
 
             if (startingFirstLap || lapIsFinished)
             {
-                carLaps[car]++; // Increase lap number
+                carLaps[car]++;
 
                 if (carLaps[car] >= totalLaps)
                 {
@@ -69,9 +69,10 @@ public class LapManager : MonoBehaviour
                     // Update lap text for the player
                     if (car.gameObject.tag == "Player")
                     {
-                        ui.UpdateLapText("Lap " + (carLaps[car]) + " / " + (totalLaps-1));
+                        ui.UpdateLapText((carLaps[car]) + " / " + (totalLaps-1));
                     }
                 }
+
             }
         }
     }

@@ -9,6 +9,7 @@ namespace Assets
     {
         // Public reference to the TextMeshProUGUI element that will display the lap information
         public TextMeshProUGUI lapText;
+        public TextMeshProUGUI resultText;
 
         // Public method to update the lap text
         public void UpdateLapText(string message)

@@ -64,7 +64,6 @@ public class CarMovement : MonoBehaviour
     }
      void Update()
     {
-        print(isGrounded);
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance, groundLayer))
         {
