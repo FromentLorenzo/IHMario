@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/soto.unity
     guid: 752c09a7764e6e643bc1cacbcc899030
   - enabled: 1
+    path: Assets/Scenes/lucie.unity
+    guid: 15f16077fb491024bbcbd0abe763455a
+  - enabled: 1
     path: Assets/Scenes/basket.unity
     guid: 87e2221c04fab9f49886c6484c4aab36
   - enabled: 1
