@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/exterieur_musee.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/soto.unity
+    guid: 752c09a7764e6e643bc1cacbcc899030
+  - enabled: 1
+    path: Assets/Scenes/basket.unity
+    guid: 87e2221c04fab9f49886c6484c4aab36
+  - enabled: 1
     path: Assets/Scenes/interieur_musee.unity
     guid: 0111ba70765b6fa47a15beb3058c5746
   - enabled: 1
