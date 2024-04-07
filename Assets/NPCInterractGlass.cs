@@ -21,7 +21,7 @@ public class NPCInterractGlass : MonoBehaviour
     public GameObject fiole3;
     private TMP_Text canvasText;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         playerCamera = Camera.main.transform;
         canvasToToggle.enabled = false;
@@ -35,40 +35,40 @@ public class NPCInterractGlass : MonoBehaviour
         canvasText = canvasGameObject.GetComponent<TMP_Text>();
     }
 
-    // Update is called once per frame
+    // Called when interaction with the glass occurs
     public void Interract()
     {
-        Debug.Log("Interract");
+        // Store the initial camera position and rotation
         initialCameraPosition = playerCamera.position;
         initialCameraRotation = playerCamera.rotation;
         StartCoroutine(MoveCameraTowardsGlass());
     }
-    
-    
+
+    // Coroutine to move the camera towards the glass
     private IEnumerator MoveCameraTowardsGlass()
     {
-        float duration = 1.8f; // Durée du déplacement de la caméra
-        Vector3 initialCameraPosition = Camera.main.transform.position;
-        Quaternion initialCameraRotation = Camera.main.transform.rotation;
-
+        float duration = 1.8f; // Duration of camera movement
         float elapsed = 0.0f;
+
         while (elapsed < duration)
         {
+            // Move the camera towards the glass
             Camera.main.transform.position = Vector3.Lerp(initialCameraPosition, cameraPosition.position, elapsed / duration);
             Camera.main.transform.rotation = Quaternion.Slerp(initialCameraRotation, cameraPosition.rotation, elapsed / duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("Glass");
+
+        // Ensure the camera is exactly at the position and rotation of the glass
+        Camera.main.transform.position = cameraPosition.position;
+        Camera.main.transform.rotation = cameraPosition.rotation;
+        Debug.Log("On repasse ici");
         cube1.SetActive(true);
         cube2.SetActive(true);
         cube3.SetActive(true);
-        // Assurez-vous que la caméra est exactement à la position et à la rotation du microscope
-        Camera.main.transform.position = cameraPosition.position;
-        Camera.main.transform.rotation = cameraPosition.rotation;
-        
+
+        // Enable necessary components after reaching the glass position
         canvasToToggle.enabled = true;
-        
     }
     public void cubeSelected(GameObject  cubeSelected)
     {
@@ -98,7 +98,6 @@ public class NPCInterractGlass : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Impossible de convertir la couleur hexadécimale en RVB. Utilisation de la couleur blanche par défaut.");
             return Color.white;
         }
     }
@@ -106,6 +105,18 @@ public class NPCInterractGlass : MonoBehaviour
     private void ChangeMaterialColor(Material material, Color color)
     {
         material.color = color;
+    }
+    
+    public void ResetCamera()
+    {
+        Debug.Log("Reset Camera glass");
+        // Restore the initial position and rotation of the camera
+        Camera.main.transform.position = initialCameraPosition;
+        Camera.main.transform.rotation = initialCameraRotation;
+        canvasToToggle.enabled = false;
+        cube1.SetActive(false);
+        cube2.SetActive(false);
+        cube3.SetActive(false);
     }
     
    

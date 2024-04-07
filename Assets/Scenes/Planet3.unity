@@ -767,6 +767,167 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -20755121490601486, guid: 0526ae0c6ae597946b290a61e3cebbd8, type: 3}
   m_PrefabInstance: {fileID: 1281095134}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &430179165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 430179166}
+  - component: {fileID: 430179170}
+  - component: {fileID: 430179169}
+  - component: {fileID: 430179168}
+  - component: {fileID: 430179167}
+  m_Layer: 0
+  m_Name: Dialogue trigger tableau
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &430179166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430179165}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.066625595, y: 1.229643, z: 0.081259675}
+  m_LocalScale: {x: 6.8418255, y: 0.876715, z: 3.3926997}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 565749483}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &430179167
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430179165}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &430179168
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430179165}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &430179169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430179165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7145a2a5bede60046b66c9bda17da0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueStrings:
+  - text: "Tu vois ce beau tableau, je voulais \xE9crire mes \xE9quations dessus,
+      mais il est trop haut pour moi"
+    isEnd: 1
+    isQuestion: 0
+    answerOption1: Elle est super Mario! Bien mieux que la voiture que je viens de
+      conduire
+    answerOption2: Elle est encore fonctionnelle ?
+    option1IndexJump: 1
+    option2IndexJump: 2
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: "Oui je t'ai vu, bravo tu as tout de m\xEAme r\xE9ussi \xE0 gagner !"
+    isEnd: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IndexJump: 1
+    option2IndexJump: 2
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: "Malheureusement non,  Doc l'a cass\xE9..."
+    isEnd: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: Carrossier content !
+    option1IndexJump: 3
+    option2IndexJump: 3
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  NPCTransform: {fileID: 1665256119}
+--- !u!33 &430179170
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430179165}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &565749483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cc4fdbb582e63ff448e4462a1ada4367, type: 3}
@@ -1113,7 +1274,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cc4fdbb582e63ff448e4462a1ada4367, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 430179166}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc4fdbb582e63ff448e4462a1ada4367, type: 3}
 --- !u!1 &634695394
@@ -2899,10 +3063,9 @@ MonoBehaviour:
       vieux film..."
     isEnd: 0
     isQuestion: 1
-    answerOption1: Elle est super Mario! Bien mieux que les vieux kart que je viens
-      de conduire
-    answerOption2: "Mon mari veut pas que je conduise sa voiture, il a peur que je
-      l'ab\xEEme"
+    answerOption1: Elle est super Mario! Bien mieux que la voiture que je viens de
+      conduire
+    answerOption2: Elle est encore fonctionnelle ?
     option1IndexJump: 1
     option2IndexJump: 2
     startDialogueEvent:
@@ -2911,13 +3074,11 @@ MonoBehaviour:
     endDialogueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - text: "Les \"vieux karts\" comme tu dit, c'est moi qui les ai con\xE7us...."
+  - text: "Oui je t'ai vu, bravo tu as tout de m\xEAme r\xE9ussi \xE0 gagner !"
     isEnd: 1
     isQuestion: 0
-    answerOption1: Elle est super Mario! Bien mieux que les vieux kart que je viens
-      de c onduire
-    answerOption2: "Mon mari veut pas que je conduise sa voiture, il a peut que je
-      l'ab\xEEme"
+    answerOption1: 
+    answerOption2: 
     option1IndexJump: 1
     option2IndexJump: 2
     startDialogueEvent:
@@ -2926,23 +3087,10 @@ MonoBehaviour:
     endDialogueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - text: Tu sais ce qu'on dit, femme au volant ....
-    isEnd: 0
-    isQuestion: 1
-    answerOption1: Mort au tournant !
-    answerOption2: Carossier content !
-    option1IndexJump: 3
-    option2IndexJump: 3
-    startDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - text: "Aller hein, on passe \xE0 la suite ?"
+  - text: "Malheureusement non,  Doc l'a cass\xE9..."
     isEnd: 1
     isQuestion: 0
-    answerOption1: Mort au tournant !
+    answerOption1: 
     answerOption2: Carrossier content !
     option1IndexJump: 3
     option2IndexJump: 3
@@ -14411,6 +14559,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644695761}
   m_CullTransparentMesh: 1
+--- !u!4 &1665256119 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1340522001139603494, guid: cc4fdbb582e63ff448e4462a1ada4367, type: 3}
+  m_PrefabInstance: {fileID: 623578482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1673899718 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a64c76a299a6ce2428c16f446d11b708, type: 3}
