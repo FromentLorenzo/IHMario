@@ -62,7 +62,6 @@ public class NPCInterractGlass : MonoBehaviour
         // Ensure the camera is exactly at the position and rotation of the glass
         Camera.main.transform.position = cameraPosition.position;
         Camera.main.transform.rotation = cameraPosition.rotation;
-        Debug.Log("On repasse ici");
         cube1.SetActive(true);
         cube2.SetActive(true);
         cube3.SetActive(true);
@@ -111,7 +110,6 @@ public class NPCInterractGlass : MonoBehaviour
     
     public void ResetCamera()
     {
-        Debug.Log("Reset Camera glass");
         // Restore the initial position and rotation of the camera
         Camera.main.transform.position = initialCameraPosition;
         Camera.main.transform.rotation = initialCameraRotation;
