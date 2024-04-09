@@ -540,7 +540,7 @@ MonoBehaviour:
   - {fileID: 1503425519}
   - {fileID: 1640119988}
   - {fileID: 1609994804}
-  totalLaps: 4
+  totalLaps: 2
   ui: {fileID: 330796905}
   onPlayerFinished:
     m_PersistentCalls:
@@ -562,7 +562,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 330796910}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadEndRaceScene
+        m_MethodName: LoadLooseRaceScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -599,7 +599,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f5043e589f8ff4448a009f927dc7f9ca, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 582dc49424da34f4ea55b5a8ef048443, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
