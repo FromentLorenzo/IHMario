@@ -7,7 +7,7 @@ public class AnimationLorenzoManager : MonoBehaviour
     private Animator mAnimator;
     private float timer;
     private float isfinnDuration = 0f;
-    private float triPionDuration = 9f;
+    private float triPionDuration = 0f;
     private float relancer = 14f;
     private int currentAnimation;
 
