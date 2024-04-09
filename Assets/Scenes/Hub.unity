@@ -1260,6 +1260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 230202654}
   planetseleced: 0
+  textToUpdate: {fileID: 329453054}
 --- !u!4 &162145365
 Transform:
   m_ObjectHideFlags: 0
@@ -2038,6 +2039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lumaInitialPosition: {fileID: 1796711749}
   enteredNumber: 3
+  planetName: LABO
 --- !u!135 &351215845
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2184,6 +2186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lumaInitialPosition: {fileID: 1796711749}
   enteredNumber: 1
+  planetName: MUSEE
 --- !u!135 &624299179
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2362,7 +2365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2386,7 +2389,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719118075}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &721832409
 GameObject:
   m_ObjectHideFlags: 0
@@ -3508,6 +3511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lumaInitialPosition: {fileID: 1796711749}
   enteredNumber: 2
+  planetName: COURSE
 --- !u!135 &1229029032
 SphereCollider:
   m_ObjectHideFlags: 0
