@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
@@ -7,6 +9,8 @@ public class UIController : MonoBehaviour
     public GameObject uiPanel; // Référence au panneau UI que vous voulez afficher ou masquer
 
     public int planetseleced;
+
+    public TextMeshProUGUI textToUpdate;
 
     // Active le panneau UI
     public void ShowUI(int p)
@@ -40,5 +44,24 @@ public class UIController : MonoBehaviour
 
     public int getplanetseleced(){
         return planetseleced;
+    }
+
+    public void UpdateText(string newText)
+    {
+        if (textToUpdate != null)
+        {
+            textToUpdate.text = FormatText(newText);
+        }
+        else
+        {
+            Debug.LogWarning("Text UI object is not assigned!");
+        }
+    }
+
+    private string FormatText(string newText)
+    {
+        string formattedText = "Voulez-vous visiter\nla planete <color=red>" + newText + "</color> ?";
+
+        return formattedText;
     }
 }

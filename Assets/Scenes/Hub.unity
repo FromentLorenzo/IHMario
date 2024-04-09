@@ -1260,6 +1260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 230202654}
   planetseleced: 0
+  textToUpdate: {fileID: 329453054}
 --- !u!4 &162145365
 Transform:
   m_ObjectHideFlags: 0
@@ -1770,7 +1771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.950928, y: -150.97641}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 75.8421, y: 76.9761}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329453054
@@ -1929,7 +1930,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Non
+  m_text: NON
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2038,6 +2039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lumaInitialPosition: {fileID: 1796711749}
   enteredNumber: 3
+  planetName: LABO
 --- !u!135 &351215845
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2184,6 +2186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lumaInitialPosition: {fileID: 1796711749}
   enteredNumber: 1
+  planetName: MUSEE
 --- !u!135 &624299179
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2346,8 +2349,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.757}
-  m_AnchoredPosition: {x: 14, y: -105}
-  m_SizeDelta: {x: -144.5799, y: -225.756}
+  m_AnchoredPosition: {x: 0, y: -103.143875}
+  m_SizeDelta: {x: -360, y: -316.0865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &719118077
 MonoBehaviour:
@@ -2362,7 +2365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2386,7 +2389,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719118075}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &721832409
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,8 +3064,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 144.43301, y: -217.17586}
-  m_SizeDelta: {x: 121.3474, y: 23.0928}
+  m_AnchoredPosition: {x: 120, y: -220}
+  m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079029106
 MonoBehaviour:
@@ -3508,6 +3511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lumaInitialPosition: {fileID: 1796711749}
   enteredNumber: 2
+  planetName: COURSE
 --- !u!135 &1229029032
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9550,7 +9554,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Oui
+  m_text: OUI
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10289,8 +10293,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -111.15486, y: -217.17586}
-  m_SizeDelta: {x: 121.3474, y: 23.0928}
+  m_AnchoredPosition: {x: -120, y: -220}
+  m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2062320791
 MonoBehaviour:

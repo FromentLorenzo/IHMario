@@ -10,6 +10,8 @@ public class Selection : MonoBehaviour
 
     public int enteredNumber;
 
+    public string planetName;
+
     void Start()
     {
         cameraController = FindObjectOfType<HubCameraController>();
@@ -19,7 +21,8 @@ public class Selection : MonoBehaviour
 
     private void OnMouseDown()
     {
-        uiController.ShowUI(enteredNumber);        
+        uiController.ShowUI(enteredNumber);
+        uiController.UpdateText(planetName);        
         cameraController.MoveAndZoomTowards(transform);
         lumaController.MoveTowards(transform);
     }
