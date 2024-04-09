@@ -145,8 +145,6 @@ private void RestoreCameraRotation()
         dialogueText.text = "";
         dialogueParent.SetActive(false);
         firstPersonController.enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
 		RestoreCameraRotation();
     }
     

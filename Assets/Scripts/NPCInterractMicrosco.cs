@@ -49,7 +49,6 @@ public class NPCInterractMicroscope : MonoBehaviour
         Camera.main.transform.rotation = microscopePosition.rotation;
         if (microscopeEyepiece != null)
         {
-			Debug.Log("Microscope desactivated");
             microscope.SetActive(false);
             microscopeEyepiece.SetActive(true);
             canvasToToggle.enabled = true;
@@ -60,7 +59,6 @@ public class NPCInterractMicroscope : MonoBehaviour
     public void ResetCamera()
     {
         canvasToToggle.enabled = false;
-        Debug.Log("Reset Camera in other file");
         // Restaurer la position et la rotation initiales de la caméra
 			microscope.SetActive(true);
             microscopeEyepiece.SetActive(false);

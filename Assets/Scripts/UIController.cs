@@ -14,7 +14,6 @@ public class UIController : MonoBehaviour
         if (uiPanel != null)
         {
             planetseleced=p;
-            Debug.Log(planetseleced);
             uiPanel.SetActive(true);
             IsUIActive = true;
         }

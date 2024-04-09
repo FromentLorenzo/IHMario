@@ -11,7 +11,6 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered");
         if (other.CompareTag("Player") && !hasSpoken)
         {
             other.gameObject.GetComponent<DialogueManager>().DialogueStart(dialogueStrings, NPCTransform);

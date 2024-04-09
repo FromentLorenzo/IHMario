@@ -22,19 +22,15 @@ public class GameManager : MonoBehaviour
    IEnumerator Countdown()
    {
        yield return new WaitForSeconds(1);
-       Debug.Log("3");
        tricolorLights.SetProgress(1);
        audioSource.PlayOneShot(lowBeep);
        yield return new WaitForSeconds(1);
-       Debug.Log("2");
        tricolorLights.SetProgress(2);
        audioSource.PlayOneShot(lowBeep);
        yield return new WaitForSeconds(1);
-       Debug.Log("1");
        tricolorLights.SetProgress(3);
        audioSource.PlayOneShot(lowBeep);
        yield return new WaitForSeconds(1);
-       Debug.Log("GO");
        tricolorLights.SetProgress(4);
        StartRacing();
        audioSource.PlayOneShot(highBeep);

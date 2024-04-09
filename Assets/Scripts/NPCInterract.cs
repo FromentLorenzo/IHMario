@@ -7,6 +7,5 @@ public class NPCInterract : MonoBehaviour
 {
     public void Interract()
     {
-        Debug.Log("Interract!");
     }
 }

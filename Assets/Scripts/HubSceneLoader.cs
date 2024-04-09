@@ -34,7 +34,6 @@ public class HubSceneLoader : MonoBehaviour
         else
         {
             // Log an error if the UIController or the selected planet is invalid
-            Debug.LogError("UIController or selected planet is invalid.");
         }
     }
 }
