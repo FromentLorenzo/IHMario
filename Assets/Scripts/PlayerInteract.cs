@@ -13,7 +13,6 @@ public class PlayerInteract : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E pressed");
             
             float interactRange = 3f;
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
@@ -30,17 +29,16 @@ public class PlayerInteract : MonoBehaviour
                     
                     microscopeInterract.Interract();
                     
-                    //StartCoroutine(resetCamera(microscopeInterract));
-                    Debug.Log("Microscope");
+                    StartCoroutine(resetCamera(microscopeInterract));
                     inMicro = true;
                 }
                 
-                if (collider.TryGetComponent(out NPCInterractGlass gameSelectionInterract))
+                if (collider.TryGetComponent(out NPCInterractGlass gameSelectionInterract) && !inMicro)
                 {
-                    Debug.Log("game");
+                    Debug.Log("ON PASSE LA");
                     gameSelectionInterract.Interract();
-                    //StartCoroutine(resetCamera(gameSelectionInterract));
-                    Debug.Log("game");
+                    StartCoroutine(resetCameraa(gameSelectionInterract));
+                    gameSelectionInterract.enabled = false;
                     inMicro = true;
                 }
             }
@@ -50,7 +48,14 @@ public class PlayerInteract : MonoBehaviour
     {
         yield return new WaitForSeconds(2f); // Attend 2 secondes
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E)); // Attend jusqu'à ce que la touche E soit pressée
-        Debug.Log("Reset Camera");
+        collider.ResetCamera();
+        inMicro = false;
+    }
+    
+    IEnumerator resetCameraa(NPCInterractGlass collider)
+    {
+        yield return new WaitForSeconds(2f);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E)); // Attend jusqu'à ce que la touche E soit pressée
         collider.ResetCamera();
         inMicro = false;
     }
