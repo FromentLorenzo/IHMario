@@ -16,17 +16,7 @@ public class LoopBasketAnimation : MonoBehaviour
     {
         if(mAnimator != null)
         {
-            if(Input.GetKeyDown(KeyCode.O))
-            {
-                Debug.Log("tri-ball");
-                mAnimator.SetTrigger("tri-ball");
-            }
-
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                Debug.Log("tri-baske");
-                mAnimator.SetTrigger("tri-baske");
-            }
+            
         }
     }
 }
