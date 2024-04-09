@@ -33,35 +33,27 @@ public class FollowingTarget : MonoBehaviour
                 // Rotate NPC to face the player
                 transform.LookAt(target);
 
-                Debug.Log("NPC is following the player.");
             }
             else
             {
                 // Stop movement animation
-                anim.SetBool("walk", false);
-                Debug.Log("NPC stopped following the player. Reached stopping distance.");
-            }
+                anim.SetBool("walk", false);}
         }
         else
         {
             // Stop movement animation if player is null or shouldFollow is false
-            anim.SetBool("walk", false);
-            Debug.Log(target);
-            Debug.Log("NPC stopped following the player. Player is null or shouldFollow is false.");
-        }
+            anim.SetBool("walk", false); }
     }
 
     // Method to start following the player
     public void StartFollowing()
     {
         shouldFollow = true;
-        Debug.Log("NPC started following the player.");
     }
 
     // Method to stop following the player
     public void StopFollowing()
     {
         shouldFollow = false;
-        Debug.Log("NPC stopped following the player.");
     }
 }

@@ -62,7 +62,6 @@ public class NPCInterractGlass : MonoBehaviour
         // Ensure the camera is exactly at the position and rotation of the glass
         Camera.main.transform.position = cameraPosition.position;
         Camera.main.transform.rotation = cameraPosition.rotation;
-        Debug.Log("On repasse ici");
         cube1.SetActive(true);
         cube2.SetActive(true);
         cube3.SetActive(true);
@@ -75,6 +74,7 @@ public class NPCInterractGlass : MonoBehaviour
         if (cubeSelected == cube1)
         {
             smoke1.Play();
+            canvasText.text = "Peach, c'était pas celui là ! On va s'étouffer avec la fumée !";
         }
         if (cubeSelected == cube2)
         {
@@ -86,6 +86,7 @@ public class NPCInterractGlass : MonoBehaviour
             explosion.Play();
             fiole3.SetActive(false);
             smoke3.Play();
+            canvasText.text = "MA FIOLE!! Peach tu as fait exploser ma fiole ! Tu es un danger public !";
         }
     }
     
@@ -109,7 +110,6 @@ public class NPCInterractGlass : MonoBehaviour
     
     public void ResetCamera()
     {
-        Debug.Log("Reset Camera glass");
         // Restore the initial position and rotation of the camera
         Camera.main.transform.position = initialCameraPosition;
         Camera.main.transform.rotation = initialCameraRotation;
