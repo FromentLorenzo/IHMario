@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rg: {fileID: 354701211}
-  forwardMoveSpeed: 100
+  forwardMoveSpeed: 115
   backwardMoveSpeed: -30
   steerSpeed: 120
   raycastDistance: 1
@@ -3354,7 +3354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rg: {fileID: 678891809}
-  forwardMoveSpeed: 100
+  forwardMoveSpeed: 115
   backwardMoveSpeed: -30
   steerSpeed: 120
   raycastDistance: 1
@@ -10463,7 +10463,7 @@ Transform:
   m_GameObject: {fileID: 1501747868158830332}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.03, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10866,7 +10866,7 @@ Transform:
   m_GameObject: {fileID: 4235597381503895783}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.06, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 101}
   m_ConstrainProportionsScale: 0
   m_Children: []
