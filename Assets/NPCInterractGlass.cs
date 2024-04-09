@@ -75,6 +75,7 @@ public class NPCInterractGlass : MonoBehaviour
         if (cubeSelected == cube1)
         {
             smoke1.Play();
+            canvasText.text = "Peach, c'était pas celui là ! On va s'étouffer avec la fumée !";
         }
         if (cubeSelected == cube2)
         {
@@ -86,6 +87,7 @@ public class NPCInterractGlass : MonoBehaviour
             explosion.Play();
             fiole3.SetActive(false);
             smoke3.Play();
+            canvasText.text = "MA FIOLE!! Peach tu as fait exploser ma fiole ! Tu es un danger public !";
         }
     }
     
