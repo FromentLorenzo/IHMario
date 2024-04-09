@@ -21,7 +21,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadLooseRaceScene()
     {
         new WaitForSeconds(1);
-        SceneManager.LoadScene("LooseRaceScreen"); // Load scene at index 3
+        SceneManager.LoadScene("LooseRaceScreen 1"); // Load scene at index 3
     }
     public void LoadHubScene()
     {
