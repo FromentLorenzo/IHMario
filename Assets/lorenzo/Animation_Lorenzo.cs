@@ -6,8 +6,8 @@ public class AnimationLorenzoManager : MonoBehaviour
 {
     private Animator mAnimator;
     private float timer;
-    private float isfinnDuration = 0f;
-    private float triPionDuration = 0f;
+    private float finnStart = 0f;
+    private float pionStart = 0f;
     private float relancer = 14f;
     private int currentAnimation;
 
@@ -32,15 +32,14 @@ public class AnimationLorenzoManager : MonoBehaviour
 
             }
 
-            if (timer >= isfinnDuration && currentAnimation == 0)
+            if (timer >= finnStart && currentAnimation == 0)
             {
-                mAnimator.SetTrigger("isfinn");
-                timer = 0f;
+                mAnimator.SetTrigger("finnAnimationTrigger");
                 currentAnimation++;
             }
-            else if (timer >= triPionDuration && currentAnimation == 1)
+            else if (timer >= pionStart && currentAnimation == 1)
             {
-                mAnimator.SetTrigger("tri-pion");
+                mAnimator.SetTrigger("pionAnimationTrigger");
                 currentAnimation++;
             }
         }
