@@ -5,54 +5,44 @@ using UnityEngine;
 public class AnimationLucieManager : MonoBehaviour
 {
     private Animator mAnimator;
-    private int frameNumber;
+    private float timer;
+    private float triChatteDuration = 0f;
+    private float triBalleDuration = 3.5f;
+    private float relancer = 8;
+    private int currentAnimation;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        frameNumber = 0;
+        timer = 0f;
         mAnimator = GetComponent<Animator>();
-
+        currentAnimation = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (mAnimator != null)
         {
-            /*if (Input.GetKeyDown(KeyCode.O))
+            timer += Time.deltaTime;
+
+            if (timer >= relancer)
+            {
+                timer = 0f;
+                currentAnimation = 0;
+
+            }
+
+            if (timer >= triChatteDuration && currentAnimation == 0)
             {
                 mAnimator.SetTrigger("tri-chatte");
-                Debug.Log("tri-chatte");
+                timer = 0f;
+                currentAnimation++;
             }
-
-            if (Input.GetKeyDown(KeyCode.C))
+            else if (timer >= triBalleDuration && currentAnimation == 1)
             {
                 mAnimator.SetTrigger("tri-balle");
-                Debug.Log("tri-balle");
-            }*/
-
-            if (frameNumber == 1600)
-            {
-                frameNumber = 0;
+                currentAnimation++;
             }
-
-            if (frameNumber == 0)
-            {
-                mAnimator.SetTrigger("tri-chatte");
-                //Debug.Log("tri-chatte");
-
-            }
-            if (frameNumber == 600)
-            {
-                mAnimator.SetTrigger("tri-balle");
-                //Debug.Log("tri-balle");
-
-            }
-            frameNumber++;
         }
-            
-
-
     }
 }
