@@ -2038,7 +2038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lumaInitialPosition: {fileID: 1796711749}
-  enteredNumber: 3
+  enteredNumber: 4
   planetName: LABO
 --- !u!135 &351215845
 SphereCollider:
@@ -2185,7 +2185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lumaInitialPosition: {fileID: 1796711749}
-  enteredNumber: 1
+  enteredNumber: 2
   planetName: MUSEE
 --- !u!135 &624299179
 SphereCollider:
@@ -3510,7 +3510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lumaInitialPosition: {fileID: 1796711749}
-  enteredNumber: 2
+  enteredNumber: 3
   planetName: COURSE
 --- !u!135 &1229029032
 SphereCollider:

@@ -6,6 +6,8 @@ using TMPro;
 public class NPCInterractGlass : MonoBehaviour
 {
     public Transform cameraPosition;
+    public GameObject princess; 
+	public GameObject princessObj;
     public ParticleSystem explosion;
     public Material fiole2Liquid;
     public ParticleSystem smoke3;
@@ -19,7 +21,10 @@ public class NPCInterractGlass : MonoBehaviour
     public GameObject cube2;
     public GameObject cube3;
     public GameObject fiole3;
+    public GameObject etoile;
     private TMP_Text canvasText;
+    private NewBehaviourScript movementScript; // Déplacer ici
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -28,11 +33,16 @@ public class NPCInterractGlass : MonoBehaviour
         cube1.SetActive(false);
         cube2.SetActive(false);
         cube3.SetActive(false);
+        etoile.SetActive(false);
         smoke1.Stop();
         smoke3.Stop();
         explosion.Stop();
         ChangeMaterialColor(fiole2Liquid, HexToColor("#D3D71A"));
         canvasText = canvasGameObject.GetComponent<TMP_Text>();
+
+		GameObject controlledObject = princessObj;
+    // Obtenir le composant NewBehaviourScript de cet objet
+    	movementScript = controlledObject.GetComponent<NewBehaviourScript>();
     }
 
     // Called when interaction with the glass occurs
@@ -42,6 +52,9 @@ public class NPCInterractGlass : MonoBehaviour
         initialCameraPosition = playerCamera.position;
         initialCameraRotation = playerCamera.rotation;
         StartCoroutine(MoveCameraTowardsGlass());
+		movementScript.SetCanMove(false);
+
+
     }
 
     // Coroutine to move the camera towards the glass
@@ -49,17 +62,19 @@ public class NPCInterractGlass : MonoBehaviour
     {
         float duration = 1.8f; // Duration of camera movement
         float elapsed = 0.0f;
-
+		
         while (elapsed < duration)
         {
             // Move the camera towards the glass
             Camera.main.transform.position = Vector3.Lerp(initialCameraPosition, cameraPosition.position, elapsed / duration);
             Camera.main.transform.rotation = Quaternion.Slerp(initialCameraRotation, cameraPosition.rotation, elapsed / duration);
             elapsed += Time.deltaTime;
+		
             yield return null;
         }
 
         // Ensure the camera is exactly at the position and rotation of the glass
+		princess.SetActive(false);
         Camera.main.transform.position = cameraPosition.position;
         Camera.main.transform.rotation = cameraPosition.rotation;
         cube1.SetActive(true);
@@ -79,7 +94,12 @@ public class NPCInterractGlass : MonoBehaviour
         if (cubeSelected == cube2)
         {
             ChangeMaterialColor(fiole2Liquid, HexToColor("#BE3058"));
+			cube2.SetActive(false);
+			cube1.SetActive(false);
+			cube3.SetActive(false);
+			StartCoroutine(makeEtoileAppear());
             canvasText.text = "Oh tu as finalement réussi ! Je te remercierai jamais assez pour ton aide. Tu es un véritable génie !";
+			
         }
         if (cubeSelected == cube3)
         {
@@ -89,6 +109,10 @@ public class NPCInterractGlass : MonoBehaviour
             canvasText.text = "MA FIOLE!! Peach tu as fait exploser ma fiole ! Tu es un danger public !";
         }
     }
+	IEnumerator makeEtoileAppear(){
+	    yield return new WaitForSeconds(1);
+	    etoile.SetActive(true);
+	}
     
     private Color HexToColor(string hex)
     {
@@ -110,6 +134,7 @@ public class NPCInterractGlass : MonoBehaviour
     
     public void ResetCamera()
     {
+		princess.SetActive(true);
         // Restore the initial position and rotation of the camera
         Camera.main.transform.position = initialCameraPosition;
         Camera.main.transform.rotation = initialCameraRotation;
@@ -117,6 +142,8 @@ public class NPCInterractGlass : MonoBehaviour
         cube1.SetActive(false);
         cube2.SetActive(false);
         cube3.SetActive(false);
+		movementScript.SetCanMove(true); // Désactiver le mouvement du personnage
+
     }
     
    

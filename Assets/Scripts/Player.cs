@@ -8,6 +8,7 @@ public class NewBehaviourScript  : MonoBehaviour
 
     private Rigidbody rb;
     private Animator animator;
+    private bool canMove = true;
 
     void Start()
     {
@@ -18,8 +19,18 @@ public class NewBehaviourScript  : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move();
-        Rotate();
+        if (canMove)
+        {
+            Move();
+            Rotate(); 
+        }
+        
+    }
+
+    // Méthode pour définir l'état du mouvement
+    public void SetCanMove(bool move)
+    {
+        canMove = move;
     }
 
     void Move()
