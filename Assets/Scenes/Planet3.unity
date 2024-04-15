@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6442,6 +6442,7 @@ GameObject:
   - component: {fileID: 1190224321}
   - component: {fileID: 1190224320}
   - component: {fileID: 1190224319}
+  - component: {fileID: 1190224325}
   m_Layer: 0
   m_Name: portail
   m_TagString: Untagged
@@ -6461,7 +6462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a618f1e942d0d48af537410510d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: endScene
+  sceneName: Hub
 --- !u!65 &1190224320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6575,6 +6576,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2068129477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1190224325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190224318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd17e388facde46448635558fa8cabda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1195488008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 82881ae72dd7ef14f91431825272f9fd, type: 3}
