@@ -1737,50 +1737,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234816171}
   m_Mesh: {fileID: -5283005812875371707, guid: 62a24de269557974089ab0de4aba5ed9, type: 3}
---- !u!1 &259849194
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 259849196}
-  - component: {fileID: 259849195}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &259849195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259849194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffb3cc8624169844a843fec50ba798f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &259849196
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259849194}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &329453052
 GameObject:
   m_ObjectHideFlags: 0
@@ -2591,6 +2547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 762007174}
   - component: {fileID: 762007173}
+  - component: {fileID: 762007175}
   m_Layer: 0
   m_Name: EndManager
   m_TagString: Untagged
@@ -2625,6 +2582,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &762007175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762007172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffb3cc8624169844a843fec50ba798f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &815184562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10701,4 +10670,3 @@ SceneRoots:
   - {fileID: 1704508244}
   - {fileID: 16010176}
   - {fileID: 762007174}
-  - {fileID: 259849196}
