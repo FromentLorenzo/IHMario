@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 public class HubSceneLoader : MonoBehaviour
 {
     private UIController uiController;
-
     public Animator crossFade;
+    private AudioSource audioSource;
 
-     void Start()
+    void Start()
     {
-       uiController = FindObjectOfType<UIController>();
+        uiController = FindObjectOfType<UIController>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     public void LoadScene()
@@ -22,18 +27,27 @@ public class HubSceneLoader : MonoBehaviour
 
     IEnumerator LoadSceneCoroutine()
     {
-        // Wait for the animation to finish (assuming the crossfade animation takes 1 second)
         yield return new WaitForSeconds(1);
-        
-        // Check if the UIController and its selected planet value are valid
         if (uiController != null)
         {
-            // Load the scene associated with the selected planet
             SceneManager.LoadScene(uiController.getplanetseleced());
         }
         else
         {
-            // Log an error if the UIController or the selected planet is invalid
+            Debug.LogError("UIController or selected planet is null.");
+        }
+    }
+
+    public void PlaySoundA(AudioClip audioClip)
+    {
+        if (audioClip != null && audioSource != null)
+        {
+            audioSource.clip = audioClip;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("Audio clip or audio source is null.");
         }
     }
 }
