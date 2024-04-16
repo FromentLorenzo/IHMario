@@ -14,7 +14,7 @@ public class SceneFinished : MonoBehaviour
             }
         }
 
-        private void FinishScene()
+        public void FinishScene()
         {
             Debug.Log("Scene Finished");
             int sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
