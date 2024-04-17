@@ -10,11 +10,23 @@ Luma : https://sketchfab.com/3d-models/luma-super-mario-galaxy-fan-art-d40d0bfbb
 
 Main elements of the race : https://www.models-resource.com/wii_u/mariokart8/
 
+Forest : https://sketchfab.com/3d-models/free-low-poly-forest-6dc8c85121234cb59dbd53a673fa2b8f
+
+Exterior Museum : https://sketchfab.com/3d-models/animal-crossing-wild-world-museum-6b317ba4cdc3499491141ce3f7bad989
+
+Interior Museum : https://sketchfab.com/3d-models/gallery-round-flatfloor-baked-2cde3a18892040719a0e9d903d95a43d
+
+SkyBoxes : https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633
+
 Some animations : https://www.mixamo.com/#/
 
 Main elements of planet 3: https://www.turbosquid.com/
 
 ### Sounds
+
+https://www.youtube.com/watch?v=7M9J-oKxQco
+
+https://www.youtube.com/watch?v=PJOmnF7-awo&t=44s
 
 https://www.youtube.com/watch?v=K2cYSuiPjYA
 
