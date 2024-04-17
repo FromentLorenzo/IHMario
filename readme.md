@@ -1,3 +1,11 @@
+## Drive link with slides + .exe + assets exported
+
+https://drive.google.com/drive/folders/1UeJa9jMnRRbFwDn0lreZvdXJbY1O2AQW?usp=sharing
+
+## Github link
+
+https://github.com/FromentLorenzo/IHMario/tree/master
+
 ## Assets and resources
 
 Tout les scripts utilisés ont été réalisés à 100% par l'ensemble des membres du groupe
