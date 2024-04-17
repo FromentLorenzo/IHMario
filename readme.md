@@ -7,10 +7,13 @@ Tout les scripts utilisés ont été réalisés à 100% par l'ensemble des membr
 ### 3D models
 
 Luma : https://sketchfab.com/3d-models/luma-super-mario-galaxy-fan-art-d40d0bfbbc904ed88d85a9d25d0502a4
+Principaux éléments de la course : https://www.models-resource.com/wii_u/mariokart8/
 
 ### Sounds
 
 https://www.youtube.com/watch?v=K2cYSuiPjYA
+https://downloads.khinsider.com/game-soundtracks/album/mario-kart-8-full-gamerip
+
 
 ### Tutorials
 
