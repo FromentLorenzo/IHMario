@@ -8,7 +8,9 @@ Tout les scripts utilisés ont été réalisés à 100% par l'ensemble des membr
 
 Luma : https://sketchfab.com/3d-models/luma-super-mario-galaxy-fan-art-d40d0bfbbc904ed88d85a9d25d0502a4
 
-Principaux éléments de la course : https://www.models-resource.com/wii_u/mariokart8/
+Main elements of the race : https://www.models-resource.com/wii_u/mariokart8/
+
+Some animations : https://www.mixamo.com/#/
 
 ### Sounds
 
