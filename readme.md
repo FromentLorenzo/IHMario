@@ -2,6 +2,8 @@
 
 https://drive.google.com/drive/folders/1UeJa9jMnRRbFwDn0lreZvdXJbY1O2AQW?usp=sharing
 
+⚠️Project was made in the unity version 2022.3.19f1 because our teacher told us to upgrade version (we tried to use 2021.3.11f1 before submission but we had some bug)⚠️
+
 ## Github link
 
 https://github.com/FromentLorenzo/IHMario/tree/master
